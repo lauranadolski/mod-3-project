@@ -1,6 +1,6 @@
-#myCanvas {
+#main-container{
   background: black;
-  width: 100%;
+  width: 720px;
   height: 480px;
   z-index: 0;}
 
@@ -23,4 +23,16 @@
   height: 100%;
   margin-left: 35%;
   margin-right: 35%;
+}
+
+#road-canvas{
+  width: 100%;
+  height: 100%;
+}
+
+.road-rectangle {
+  height: 10px;
+  width: 5px;
+  background: yellow;
+
 }
