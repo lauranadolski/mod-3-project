@@ -1,73 +1,33 @@
 const gameWindow = document.getElementById('main-container');
 const skyBox = document.getElementById('sky');
 const roadBox = document.getElementById('road');
+const roadRectangleBox = document.getElementById('road-rectangle-box');
 const gameHeight = 480;
 const gameWidth = 720;
 const roadHeight = roadBox.style.top;
 const roadWidth = roadBox.style.right;
 
-console.log(roadHeight)
-
-
 function createRoadRectangle() {
-  let roadRectangle = document.createElement('div')
-  roadRectangle.className = "road-rectangle"
+  const roadRectangle = document.createElement("div");
+  roadRectangle.className = 'road-rectangle';
+  var top = roadRectangle.style.top = 150;
+  var bottom = roadRectangle.style.bottom = top + 10;
+  // var left = roadRectangle.style.left = 100;
+  // var right = roadRectangle.style.right = 100;
+  skyBox.appendChild(roadRectangle);
 
-  roadBox.appendChild(roadRectangle)
+  function moveRoadRectangleDown() {
+    roadRectangle.style.top = `${top += 5}px`;
+    if (top < gameHeight) {
+      window.requestAnimationFrame(moveRoadRectangleDown);
+    } else {
+      roadRectangle.remove();
+    }
+  }
+  window.requestAnimationFrame(moveRoadRectangleDown);
+  return roadRectangle;
 }
 
-createRoadRectangle()
-
-
-
-
-
-//
-// var canvas = document.getElementById("road-canvas");
-// var ctx = canvas.getContext("2d");
-//
-// class roadRect {
-//   constructor() {
-//     this.x = canvas.width/2;
-//     this.y = 0;
-//     this.dx = 0;
-//     this.dy = 0.5;
-//   }
-//
-//
-//   draw() {
-//       ctx.clearRect(0, 0, canvas.width, canvas.height);
-//       this.drawRect();
-//       this.x += this.dx;
-//       this.y += this.dy;
-//   }
-//
-//   drawRect() {
-//     ctx.beginPath();
-//     ctx.rect(this.x, this.y, 10, 10);
-//     ctx.fillStyle = "#FFFF00";
-//     ctx.fill();
-//     ctx.closePath();
-//   }
-//
-//   initializeMovement() {
-//     setInterval(this.draw.bind(this), 10);
-//   }
-// }
-//
-// function wait(ms){
-//    var start = new Date().getTime();
-//    var end = start;
-//    while(end < start + ms) {
-//      end = new Date().getTime();
-//   }
-// }
-//
-// const alwaysTrue = true;
-//
-// function createRect() {
-//   let roadRectInstance = new roadRect;
-//   roadRectInstance.initializeMovement.call(roadRectInstance);
-// }
-//
-// createRect()
+  setInterval(function(){
+    createRoadRectangle();
+  }, 800);
