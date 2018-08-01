@@ -1,9 +1,11 @@
-class Api < ActiveRecord::Base
+class Api
+  require 'net/http'
+  require 'uri'
 
-@url_array = []
-  def self.urlArray
-    url = 'https://api.spotify.com/v1/search?type=artist&q=tycho'
-    response = HTTParty.get(url)
-    url_hash << response.parsed_response
+  url = 'http://localhost:3000/users'
+  uri = URI.parse(url)
 
-  end
+  params = {'name' => 'yes'}
+
+  Net::HTTP.post_form(uri, params)
+end
