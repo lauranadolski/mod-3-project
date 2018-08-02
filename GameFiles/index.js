@@ -52,3 +52,5 @@ function createRoadRectangle() {
   setInterval(function(){
     createRoadRectangle();
   }, 800);
+
+  animateMainCharacter();
