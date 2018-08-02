@@ -1,7 +1,7 @@
 let action = 'JUMP!';
 let timeLeft = 3;
-//let willLose = true;
-let willLose = false;
+let willLose = true;
+//let willLose = false;
 let score = 0;
 const actionArray = ['JUMP!', 'DUCK!', 'RIGHT!', 'LEFT!'];
 
@@ -45,26 +45,61 @@ skyBox.appendChild(actionElem);
     action = actionArray[randomNumber]
     timeLeft = 4;
     actionElem.innerHTML = action;
-    //willLose = true;
+    changeWillLose(true);
   }
 
 
 function keyInput(e) {
-  if (e.key == "ArrowUp" && action == 'JUMP!') {
-    console.log('jump!');
-    willLose = false;
+  if (e.key == "ArrowUp") {
+    if (action == 'JUMP!') {
+      changeWillLose(false);
+      console.log("nice!")
+    }
+    else {
+      changeWillLose(true);
+      console.log("oh no!")
+    }
   }
-  else if (e.key == "ArrowDown" && action == 'DUCK!') {
-    console.log('duck!');
-    willLose = false;
+  else if (e.key == "ArrowDown") {
+    if (action == 'DUCK!') {
+      changeWillLose(false);
+      console.log("nice!")
+    }
+    else {
+      changeWillLose(true);
+      console.log("oh no!")
+    }
   }
-  else if (e.key == "ArrowRight" && action == 'RIGHT!') {
-    console.log('roll right!');
-    willLose = false;
+  else if (e.key == "ArrowRight") {
+    if (action == 'RIGHT!') {
+      changeWillLose(false);
+      console.log("nice!")
+    }
+    else {
+      changeWillLose(true);
+      console.log("oh no!")
+    }
   }
   else if (e.key == "ArrowLeft" && action == 'LEFT!') {
-    console.log('roll left!')
-    willLose = false;
+    if (action == 'LEFT!') {
+      changeWillLose(false);
+      console.log("nice!")
+    }
+    else {
+      changeWillLose(true);
+      console.log("oh no!")
+    }
+  }
+}
+
+function changeWillLose(bool) {
+  willLose = bool;
+  if (!bool) {
+    willLoseBlock.style.background = "green";
+    console.log("green")
+  }
+  else {
+    willLoseBlock.style.background = "red";
   }
 }
 

@@ -7,6 +7,7 @@ const gameWidth = 720;
 const roadHeight = roadBox.style.top;
 const roadWidth = roadBox.style.right;
 const charSprite = document.getElementById('char-sprite');
+const willLoseBlock = document.getElementById('safe-or-no');
 const spriteOptionArray = ["./gameSprites/gameSpriteNeutral.png", "./gameSprites/gameSpriteRight.png", "./gameSprites/gameSpriteNeutral.png", "./gameSprites/gameSpriteLeft.png"]
 let spriteOptionIndex = 0;
 
@@ -40,6 +41,7 @@ function createRoadRectangle() {
         spriteOptionIndex = -1;
       }
       if (counter % 6 == 0) {
+        console.log("yoyoyo")
         charSprite.src = spriteOptionArray[spriteOptionIndex += 1];
       }
       counter++;
