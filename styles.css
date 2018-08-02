@@ -35,7 +35,7 @@
 }
 
 #timer {
-  
+
 }
 
 .road-rectangle {
@@ -47,5 +47,12 @@
   position: center;
   margin: 0 auto;
   overflow: hidden;
+}
 
+#char-sprite {
+  width: 30px;
+  height: 30px;
+  top: 400px;
+  left: 345px;
+  position: absolute;
 }
