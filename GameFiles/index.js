@@ -41,6 +41,7 @@ function createRoadRectangle() {
         spriteOptionIndex = -1;
       }
       if (counter % 6 == 0) {
+        console.log("yoyoyo")
         charSprite.src = spriteOptionArray[spriteOptionIndex += 1];
       }
       counter++;
