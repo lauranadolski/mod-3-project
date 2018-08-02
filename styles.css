@@ -52,6 +52,7 @@
 #char-sprite {
   width: 30px;
   height: 30px;
-  top: 280px;
-  position: relative;
+  top: 400px;
+  left: 345px;
+  position: absolute;
 }

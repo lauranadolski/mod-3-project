@@ -33,12 +33,16 @@ function createRoadRectangle() {
 }
 
   function animateMainCharacter() {
+    let counter = 0;
     function step() {
       window.requestAnimationFrame(step)
       if (spriteOptionIndex == 3) {
         spriteOptionIndex = -1;
       }
-      charSprite.src = spriteOptionArray[spriteOptionIndex += 1]
+      if (counter % 6 == 0) {
+        charSprite.src = spriteOptionArray[spriteOptionIndex += 1];
+      }
+      counter++;
     }
     window.requestAnimationFrame(step)
   }
