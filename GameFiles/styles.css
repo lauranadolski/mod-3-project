@@ -7,7 +7,6 @@
   overflow: hidden;
   position: relative;
   text-align: center;
-
 }
 
 #sky{
@@ -39,12 +38,20 @@
 }
 
 .road-rectangle {
+ height: 10px;
+ width: 5px;
+ left: 50%;
+ background: yellow;
+ position: absolute;
+ margin: 0 auto;
+}
+
+.obstacle {
   height: 10px;
-  width: 5px;
-  background: yellow;
-  position: relative;
-  text-align: center;
-  position: center;
+  width: 10px;
+  left: 45%;
+  background: purple;
+  position: absolute;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -64,4 +71,38 @@
   left: 20px;
   position: absolute;
   background: red;
+  z-index: 10;
+}
+
+.cloud {
+  margin: 100px auto 0px auto;
+  width: 100px;
+  height: 33px;
+  position: absolute;
+  background: url('./gameSprites/cloud.svg');
+  background-repeat: no-repeat;
+}
+
+.sun {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 10px;
+  left: 600px;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 720px;
+    height: 144px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: center;
+    position: relative;
+    text-align: center;
+    background-color: transparent;
+    z-index: 999; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
 }
