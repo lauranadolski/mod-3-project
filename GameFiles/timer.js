@@ -1,9 +1,9 @@
 
-let actionArray = ['peanuts', 'popcorn', 'moist', 'apple'];
+let actionArray = ['peanuts', 'popcorn', 'moist', 'Apple', 'horse', 'butt', 'pudding', 'Burger', 'fries', 'Nifty', 'Obama', 'Beyonce', 'Brad', 'garbage', 'cyst', 'mango', 'die', 'covfefe', 'stank', 'pus', 'Folds', 'plunger'];
 let timeLeft = 5;
 let willLose = true;
 let score = 0;
-let action = actionArray[(Math.floor(Math.random() * 3))];
+let action = actionArray[(Math.floor(Math.random() * 19))];
 
 function checkForMatch(speechArray) {
   console.log(`check for match initialized on ${speechArray}`)
@@ -58,11 +58,20 @@ function initializeTimer() {
 
 
     function decrementTime() {
+      if (timeLeft == 3) {
+        charSprite.style.left = '345px';
+      }
       if (timeLeft == 0) {
         if (willLose) {
-          // alert(`you lose bitch! your score: ${score}`)
+           gameOver()
         }
-        resetTime();
+        else {
+          let currentLocation = window.getComputedStyle(charSprite).left
+          console.log(currentLocation);
+          charSprite.style.left = '385px';
+          resetTime();
+        }
+
       }
       timeLeft -= 1;
       score += 5;
@@ -72,7 +81,7 @@ function initializeTimer() {
 
     function resetTime() {
       annyang.pause()
-      let randomNumber = (Math.floor(Math.random() * 3));
+      let randomNumber = (Math.floor(Math.random() * 19));
       action = actionArray[randomNumber]
       timeLeft = 4;
       actionElem.innerHTML = action;

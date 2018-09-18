@@ -28,12 +28,12 @@ let spriteOptionIndex = 0;
     }, 3500);
     setInterval(function(){
       createObstacle();
-    }, 5000);
+    }, 4000);
   }
 
 // "Game Over" functionality
   function gameOver() {
-    alert("YOU LOSE");
+    alert(`you lose! your score: ${score}`)
     clearInterval(startGame);
     location.reload();
   }
@@ -91,7 +91,9 @@ function createRoadRectangle() {
 function createObstacle() {
   const obstacle = document.createElement("div");
   obstacle.className = 'obstacle';
+  obstacle.innerText = '🔥'
   var top = obstacle.style.top = 144;
+
   skyBox.appendChild(obstacle);
 
   function moveObstacle() {
@@ -154,6 +156,15 @@ function createClouds() {
   sun.src = "./gameSprites/sun.png";
   sun.className = "sun";
   skyBox.appendChild(sun);
+
+
+
+//////////////////////////////////////////////////////////////////////////
+// Dodge - for Sprite to dodge the obstacle.
+
+  // function dodge() {
+  //   charSprite.
+  // }
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
