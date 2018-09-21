@@ -1,5 +1,9 @@
 
-let actionArray = ['peanuts', 'popcorn', 'moist', 'Apple', 'horse', 'butt', 'pudding', 'Burger', 'fries', 'Nifty', 'Obama', 'Beyonce', 'Brad', 'garbage', 'cyst', 'mango', 'die', 'covfefe', 'stank', 'pus', 'Folds', 'plunger'];
+// let actionArray = ['peanuts', 'popcorn', 'moist', 'Apple', 'horse', 'butt', 'pudding', 'Burger', 'fries', 'Nifty', 'Obama', 'Beyonce', 'Brad', 'garbage', 'cyst', 'mango', 'die', 'covfefe', 'stank', 'pus', 'Folds', 'plunger'];
+
+let actionArray = ['peanuts', 'popcorn', 'grapes', 'Apple', 'horse', 'dog', 'pudding', 'Burger', 'fries', 'Nifty', 'Obama', 'Beyonce', 'Brad', 'cat', 'baby', 'mango', 'party', 'school', 'coding', 'happy', 'unicorn', 'soda'];
+
+// let actionArray = ['peanuts', 'popcorn', 'Apple', 'horse', 'pudding', 'Burger', 'fries', 'Nifty', 'Obama', 'Beyonce', 'Brad', 'mango'];
 let timeLeft = 5;
 let willLose = true;
 let score = 0;

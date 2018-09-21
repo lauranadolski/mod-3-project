@@ -214,3 +214,217 @@ fetch(`http://localhost:3000/api/v1/users`, {
     }).then(res => res.json()).then(data => console.log(data));
       // our backend responds with the updated note instance represented as JSON
 }
+
+
+// startGame();
+//
+//
+//
+// /////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////
+//
+//
+//
+// var actionArray = ['peanuts', 'popcorn', 'moist', 'Apple', 'horse', 'butt', 'pudding', 'Burger', 'fries', 'Nifty', 'Obama', 'Beyonce', 'Brad', 'garbage', 'cyst', 'mango', 'die', 'covfefe', 'stank', 'pus', 'Folds', 'plunger'];
+// var timeLeft = 5;
+// var willLose = true;
+// var score = 0;
+// var action = actionArray[(Math.floor(Math.random() * 19))];
+//
+// function checkForMatch(speechArray) {
+//   console.log(`check for match initialized on ${speechArray}`)
+//   console.log(speechArray)
+//   console.log(`heres the action: ${action}`)
+//   console.log(speechArray.includes(action))
+//   if (speechArray.includes(action)) {
+//     changeWillLose(false);
+//   } else {
+//     changeWillLose(true);
+//   }
+//   console.log(willLose);
+// }
+//
+// function changeWillLose(bool) {
+//   console.log(`changeWillLose on: ${bool}`)
+//   willLose = bool;
+//   if (!bool) {
+//     willLoseBlock.style.background = "green";
+//     console.log("green")
+//   }
+//   else {
+//     willLoseBlock.style.background = "red";
+//   }
+// }
+//
+// function initializeTimer() {
+//   // let action = 'JUMP!';
+//   //let willLose = false;
+//   // const actionArray = ['JUMP!', 'DUCK!', 'RIGHT!', 'LEFT!'];
+//
+//   let scoreElem = document.createElement('div');
+//   scoreElem.innerHTML = `Your score: ${score}`;
+//   scoreElem.style.position = 'relative';
+//   scoreElem.style.left = '87%';
+//   scoreElem.style.width = '85px';
+//   skyBox.appendChild(scoreElem);
+//
+//   let timer = document.createElement('div');
+//   timer.innerHTML = `Time Left: ${timeLeft}`;
+//   timer.style.position = 'relative';
+//   timer.style.left = '45%';
+//   timer.style.width = '85px';
+//   skyBox.appendChild(timer);
+//
+//   let actionElem = document.createElement('div');
+//   actionElem.innerHTML = `${action}`;
+//   actionElem.style.position = 'relative';
+//   actionElem.style.left = '45%';
+//   actionElem.style.width = '85px';
+//   skyBox.appendChild(actionElem);
+//
+//
+//     function decrementTime() {
+//       if (timeLeft == 3) {
+//         charSprite.style.left = '345px';
+//       }
+//       if (timeLeft == 0) {
+//         if (willLose) {
+//            gameOver()
+//         }
+//         else {
+//           let currentLocation = window.getComputedStyle(charSprite).left
+//           console.log(currentLocation);
+//           charSprite.style.left = '385px';
+//           resetTime();
+//         }
+//
+//       }
+//       timeLeft -= 1;
+//       score += 5;
+//       scoreElem.innerHTML = `Your score: ${score}`;
+//       timer.innerHTML = `Time Left: ${timeLeft}`;
+//     }
+//
+//     function resetTime() {
+//       annyang.pause()
+//       let randomNumber = (Math.floor(Math.random() * 19));
+//       action = actionArray[randomNumber]
+//       timeLeft = 4;
+//       actionElem.innerHTML = action;
+//       changeWillLose(true);
+//       annyang.resume();
+//
+//     }
+//
+//
+//   // function keyInput(e) {
+//   //   if (e.key == "ArrowUp") {
+//   //     if (action == 'JUMP!') {
+//   //       changeWillLose(false);
+//   //       console.log("nice!")
+//   //     }
+//   //     else {
+//   //       changeWillLose(true);
+//   //       console.log("oh no!")
+//   //     }
+//   //   }
+//   //   else if (e.key == "ArrowDown") {
+//   //     if (action == 'DUCK!') {
+//   //       changeWillLose(false);
+//   //       console.log("nice!")
+//   //     }
+//   //     else {
+//   //       changeWillLose(true);
+//   //       console.log("oh no!")
+//   //     }
+//   //   }
+//   //   else if (e.key == "ArrowRight") {
+//   //     if (action == 'RIGHT!') {
+//   //       changeWillLose(false);
+//   //       console.log("nice!")
+//   //     }
+//   //     else {
+//   //       changeWillLose(true);
+//   //       console.log("oh no!")
+//   //     }
+//   //   }
+//   //   else if (e.key == "ArrowLeft" && action == 'LEFT!') {
+//   //     if (action == 'LEFT!') {
+//   //       changeWillLose(false);
+//   //       console.log("nice!")
+//   //     }
+//   //     else {
+//   //       changeWillLose(true);
+//   //       console.log("oh no!")
+//   //     }
+//   //   }
+//   // }
+//
+//
+//
+//   let interval = setInterval(decrementTime, 1000);
+//
+//   // window.addEventListener("keydown", keyInput);
+//
+//
+// }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// ///////////////////////////////////////////////////////////////////////
+//
+//
+//
+//
+// console.log("i'm in the annyang file")
+//
+// function listen() {
+//
+//   let commands = {
+//     'listen': function() { console.log('I heard you say listen.') },
+//     'reset': function() { console.log('I heard you say reset.') },
+//     'hello': function() { console.log('I heard you say hello.') },
+//     'goodbye': function() { console.log('I heard you say goodbye.') },
+//     'beyonce': function() { console.log('I heard you say Beyonce.') },
+//     'start game': function() {startGame();},
+//     'end game': function() {gameOver();}
+//   };
+//
+//   annyang.addCommands(commands);
+//
+//   annyang.start({ autoRestart: false, continuous: true, paused: false });
+//
+//
+//   annyang.addCallback('result', function(phrases) {
+//     console.log("bout to checkForMatch!")
+//
+//     console.log(`These are the original phrases: ${phrases}`)
+//
+//
+//     let sanitizedPhrases = phrases.map( element => {if (element[0] == " ") {return element.substring(1)} else {return element}})
+//
+//
+//     console.log(`These are the sanitized phrases: ${sanitizedPhrases}`)
+//
+//
+//     checkForMatch(sanitizedPhrases);
+//
+//
+//   });
+//
+// }

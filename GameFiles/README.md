@@ -12,7 +12,7 @@ This app was created as a final group project for the JavaScript module at the F
 ~~~~SCREENSHOTS~~~~
 ~~~~~~~~~~~~~~~~~~~
 
-[Coming soon]
+Video demo can be found at: https://youtu.be/A-_fFxnECTo
 
 ~~~~~~~~~~~~~~~~~~
 ~~~~~~HOW-TO~~~~~~
