@@ -1,33 +1,22 @@
-
-// let actionArray = ['peanuts', 'popcorn', 'moist', 'Apple', 'horse', 'butt', 'pudding', 'Burger', 'fries', 'Nifty', 'Obama', 'Beyonce', 'Brad', 'garbage', 'cyst', 'mango', 'die', 'covfefe', 'stank', 'pus', 'Folds', 'plunger'];
-
-let actionArray = ['peanuts', 'popcorn', 'grapes', 'Apple', 'horse', 'dog', 'pudding', 'Burger', 'fries', 'Nifty', 'Obama', 'Beyonce', 'Brad', 'cat', 'baby', 'mango', 'party', 'school', 'coding', 'happy', 'unicorn', 'soda'];
-
-// let actionArray = ['peanuts', 'popcorn', 'Apple', 'horse', 'pudding', 'Burger', 'fries', 'Nifty', 'Obama', 'Beyonce', 'Brad', 'mango'];
+// This is the array of words that will be prompted to the user to verbalize.
+let actionArray = ['Peanuts', 'Popcorn', 'Grapes', 'Apple', 'Horse', 'Dog', 'Pudding', 'Burger', 'Fries', 'Nifty', 'Obama', 'Beyonce', 'Brad', 'Cat', 'Baby', 'Mango', 'Party', 'School', 'Coding', 'Happy', 'Unicorn', 'Soda'];
 let timeLeft = 5;
 let willLose = true;
 let score = 0;
 let action = actionArray[(Math.floor(Math.random() * 19))];
 
 function checkForMatch(speechArray) {
-  console.log(`check for match initialized on ${speechArray}`)
-  console.log(speechArray)
-  console.log(`heres the action: ${action}`)
-  console.log(speechArray.includes(action))
   if (speechArray.includes(action)) {
     changeWillLose(false);
   } else {
     changeWillLose(true);
   }
-  console.log(willLose);
 }
 
 function changeWillLose(bool) {
-  console.log(`changeWillLose on: ${bool}`)
   willLose = bool;
   if (!bool) {
     willLoseBlock.style.background = "green";
-    console.log("green")
   }
   else {
     willLoseBlock.style.background = "red";
@@ -35,9 +24,6 @@ function changeWillLose(bool) {
 }
 
 function initializeTimer() {
-  // let action = 'JUMP!';
-  //let willLose = false;
-  // const actionArray = ['JUMP!', 'DUCK!', 'RIGHT!', 'LEFT!'];
 
   let scoreElem = document.createElement('div');
   scoreElem.innerHTML = `Your score: ${score}`;
@@ -60,7 +46,6 @@ function initializeTimer() {
   actionElem.style.width = '85px';
   skyBox.appendChild(actionElem);
 
-
     function decrementTime() {
       if (timeLeft == 3) {
         charSprite.style.left = '345px';
@@ -71,11 +56,9 @@ function initializeTimer() {
         }
         else {
           let currentLocation = window.getComputedStyle(charSprite).left
-          console.log(currentLocation);
           charSprite.style.left = '385px';
           resetTime();
         }
-
       }
       timeLeft -= 1;
       score += 5;
@@ -93,56 +76,41 @@ function initializeTimer() {
       annyang.resume();
 
     }
-
-
-  // function keyInput(e) {
-  //   if (e.key == "ArrowUp") {
-  //     if (action == 'JUMP!') {
-  //       changeWillLose(false);
-  //       console.log("nice!")
-  //     }
-  //     else {
-  //       changeWillLose(true);
-  //       console.log("oh no!")
-  //     }
-  //   }
-  //   else if (e.key == "ArrowDown") {
-  //     if (action == 'DUCK!') {
-  //       changeWillLose(false);
-  //       console.log("nice!")
-  //     }
-  //     else {
-  //       changeWillLose(true);
-  //       console.log("oh no!")
-  //     }
-  //   }
-  //   else if (e.key == "ArrowRight") {
-  //     if (action == 'RIGHT!') {
-  //       changeWillLose(false);
-  //       console.log("nice!")
-  //     }
-  //     else {
-  //       changeWillLose(true);
-  //       console.log("oh no!")
-  //     }
-  //   }
-  //   else if (e.key == "ArrowLeft" && action == 'LEFT!') {
-  //     if (action == 'LEFT!') {
-  //       changeWillLose(false);
-  //       console.log("nice!")
-  //     }
-  //     else {
-  //       changeWillLose(true);
-  //       console.log("oh no!")
-  //     }
-  //   }
-  // }
-
-
-
   let interval = setInterval(decrementTime, 1000);
-
-  // window.addEventListener("keydown", keyInput);
-
-
 }
+
+// Code for future implementation of key commands:
+// function keyInput(e) {
+//   if (e.key == "ArrowUp") {
+//     if (action == 'JUMP!') {
+//       changeWillLose(false);
+//     }
+//     else {
+//       changeWillLose(true);
+//     }
+//   }
+//   else if (e.key == "ArrowDown") {
+//     if (action == 'DUCK!') {
+//       changeWillLose(false);
+//     }
+//     else {
+//       changeWillLose(true);
+//     }
+//   }
+//   else if (e.key == "ArrowRight") {
+//     if (action == 'RIGHT!') {
+//       changeWillLose(false);
+//     }
+//     else {
+//       changeWillLose(true);
+//     }
+//   }
+//   else if (e.key == "ArrowLeft" && action == 'LEFT!') {
+//     if (action == 'LEFT!') {
+//       changeWillLose(false);
+//     }
+//     else {
+//       changeWillLose(true);
+//     }
+//   }
+// }
