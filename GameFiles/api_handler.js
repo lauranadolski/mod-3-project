@@ -1,9 +1,12 @@
+// Removes all of the elements on the page.
 function removeAll() {
    skyBox.remove()
    roadBox.remove()
    roadRectangleBox.remove()
    willLoseBlock.remove()
  }
+
+// Loads all the players from the backend.
  function loadPlayers() {
    const url = 'http://localhost:3000/api/v1/users'
    fetch(url).then(res=> res.json()).then(json => json.forEach(user => playerLists.push(user))).then(iHateYouAsynchronous => {
@@ -56,13 +59,14 @@ function removeAll() {
       }).then(res => res.json())
      // our backend responds with the updated note instance represented as JSON
      }
+
+// Ends the game with an updated score.
 function endGame(ascore) {
  removeAll()
  clearInterval(interval)
  gameWindow.style.background = 'white'
  updateScore(ascore)
  loadPlayers()
-
 }
 
 function onlyUnique(value, index, self) {

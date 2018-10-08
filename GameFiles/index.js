@@ -38,7 +38,6 @@ let spriteOptionIndex = 0;
   }
 
 // Changing the size of a passed-through item.
-
   function changeSize(targetItem, horizontalFactorOfChange, verticalFactorOfChange) {
     let oldWidth = parseInt(window.getComputedStyle(targetItem).width);
     let oldHeight = parseInt(window.getComputedStyle(targetItem).height);
@@ -48,7 +47,6 @@ let spriteOptionIndex = 0;
   }
 
 // Road rectangle creation and propagation.
-
 function createRoadRectangle() {
   const roadRectangle = document.createElement("div");
   roadRectangle.className = 'road-rectangle';
@@ -83,8 +81,7 @@ function createRoadRectangle() {
   return roadRectangle;
 }
 
-// Obstacles
-
+// Creating and moving obstacles.
 function createObstacle() {
   const obstacle = document.createElement("div");
   obstacle.className = 'obstacle';
@@ -122,8 +119,7 @@ function createObstacle() {
     window.requestAnimationFrame(step)
   }
 
-// Clouds
-
+// Cloud creation and animation.
 function createClouds() {
   const cloud = document.createElement("div");
   cloud.className = 'cloud';
@@ -134,7 +130,6 @@ function createClouds() {
 
   function moveCloud() {
    cloud.style.left = `${left += 0.5}px`;
-
    if (left < gameWidth) {
      window.requestAnimationFrame(moveCloud);
    } else {
@@ -145,12 +140,13 @@ function createClouds() {
   return cloud;
 }
 
-// Sun creation & appending to DOM
+// Sun creation & appending it to the DOM
   let sun = document.createElement("img");
   sun.src = "./gameSprites/sun.png";
   sun.className = "sun";
   skyBox.appendChild(sun);
 
+// Update the score on the backend.
 function updateScore() {
 let bodyJSON = {name: "Sang", points: 89}
 fetch(`http://localhost:3000/api/v1/users/1`, {
@@ -164,6 +160,7 @@ fetch(`http://localhost:3000/api/v1/users/1`, {
       // Our backend responds with the updated note instance represented as JSON
   };
 
+// Create a new user.
 function createUser() {
 let bodyJSON = {name: "Issac", points: 39}
 fetch(`http://localhost:3000/api/v1/users`, {

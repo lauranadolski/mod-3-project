@@ -5,6 +5,8 @@ let willLose = true;
 let score = 0;
 let action = actionArray[(Math.floor(Math.random() * 19))];
 
+
+// Checks whether the user verbalized the correct word.
 function checkForMatch(speechArray) {
   if (speechArray.includes(action)) {
     changeWillLose(false);
@@ -13,6 +15,7 @@ function checkForMatch(speechArray) {
   }
 }
 
+// Changes the "will lose" boolean to the opposite value.
 function changeWillLose(bool) {
   willLose = bool;
   if (!bool) {
@@ -23,8 +26,8 @@ function changeWillLose(bool) {
   }
 }
 
+// Starts running the timer and updating it on the DOM.
 function initializeTimer() {
-
   let scoreElem = document.createElement('div');
   scoreElem.innerHTML = `Your score: ${score}`;
   scoreElem.style.position = 'relative';
@@ -80,6 +83,7 @@ function initializeTimer() {
 }
 
 // Code for future implementation of key commands:
+
 // function keyInput(e) {
 //   if (e.key == "ArrowUp") {
 //     if (action == 'JUMP!') {
